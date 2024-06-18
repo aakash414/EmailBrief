@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Email Summarizer",
+    "version": "1.0",
+    "description": "Condense long emails into bullet points.",
+    "permissions": [
+        "https://mail.google.com/",
+        "activeTab",
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://mail.google.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}

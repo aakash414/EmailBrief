@@ -1,0 +1,14 @@
+{
+  "name": "gmail-summarizer",
+  "version": "1.0.0",
+  "description": "gmail message summarizer",
+  "main": "background.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "aakash414",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}

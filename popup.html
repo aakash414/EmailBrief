@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Summarizer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        padding: 20px;
+      }
+      .summary-container {
+        margin-top: 20px;
+      }
+      pre {
+        white-space: pre-wrap;
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h5 class="center-align">Email Summary</h5>
+      <div class="summary-container">
+        <pre id="summary"></pre>
+      </div>
+    </div>
+    <!-- Import Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
