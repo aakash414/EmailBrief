@@ -1,4 +1,6 @@
-const HUGGING_FACE_API_KEY = "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";
+require("dotenv").config();
+
+const HUGGING_FACE_API_KEY = process.env.API_KEY;
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   if (request.action === "summarize") {
