@@ -1,4 +1,3 @@
-// Function to inject the Summarize button into Gmail's UI
 function injectButton() {
   const button = document.createElement("button");
   button.innerText = "Summarize Email";
@@ -6,12 +5,19 @@ function injectButton() {
   button.style.position = "absolute";
   button.style.top = "10px";
   button.style.right = "10px";
-  document.body.appendChild(button);
+  console.log("Button created");
+
+  // Ensure the script is running in the right context
+  const emailBody = document.querySelector(".email-body-selector"); // Update selector as needed
+  if (emailBody) {
+    console.log("Email body found");
+    emailBody.appendChild(button);
+  } else {
+    console.log("Email body not found");
+  }
 
   button.addEventListener("click", () => {
-    const emailContent = document.querySelector(
-      ".email-body-selector"
-    ).innerText; // Update selector as needed
+    const emailContent = emailBody ? emailBody.innerText : "";
     chrome.runtime.sendMessage(
       { action: "summarize", content: emailContent },
       (response) => {
@@ -26,5 +32,7 @@ function injectButton() {
   });
 }
 
-// Inject the button when Gmail's DOM is fully loaded
-document.addEventListener("DOMContentLoaded", injectButton);
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+  injectButton();
+});
